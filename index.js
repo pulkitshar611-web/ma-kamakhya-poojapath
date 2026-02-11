@@ -33,7 +33,8 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // Configure Cashfree
-
+Cashfree.XClientId = "8315403a38906d3fc3d064abfa045138";
+Cashfree.XClientSecret = "cfsk_ma_prod_bf6964dae51bfd5b09acc1061c35136f_9044ba19";
 Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
 
 // Banner Routes

@@ -15,7 +15,24 @@ const path = require("path")
 dotenv.config({ path: "backend/config/config.env" });
 
 app.use(compression());
+
+
 app.use(cors({ origin: "*" }))
+
+app.use(
+  cors({
+    origin: [
+      "https://maakamakhyapujaseva.com"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
+
+// Handle preflight requests
+app.options("*", cors());
+
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
